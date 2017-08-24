@@ -12,6 +12,9 @@ git commit -m "note”
 git pull origin master 
 git push origin master 
 
+git commit -m "note”  
+git push origin master 
+
 git clone https://github.com/chuanlinfan/acm.git
 
 git config --global http.proxy http://HZ20173:1qaz2WSX@hzproxyisa.utstar.com.cn:1080
