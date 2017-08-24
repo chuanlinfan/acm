@@ -10,19 +10,21 @@ int main()
 	int start = 0, end = 0, i = 0, j = 0, len = 0;
 	
 	char *src;
-	char *dest;
-	
+	char *dest[MAX_STR_LEN];
+		
 	scanf("%d",&count);
 	getchar();
+	
+	*dest = malloc(count);
 
 	while(k < count)
 	{
 		len = 0;
 		src = malloc(MAX_STR_LEN*sizeof(char));
-		dest = malloc(MAX_STR_LEN*sizeof(char));
+		dest[k] = malloc(MAX_STR_LEN*sizeof(char));
 
 		memset(src,0,sizeof(src));
-		memset(dest,0,sizeof(dest));
+		memset(dest[k],0,sizeof(*dest[k]));
 
 		fgets(src, MAX_STR_LEN, stdin);
 		len = strlen(src);
@@ -35,22 +37,32 @@ int main()
 			{
 				for(j = start; j < end; j++)
 				{
-					dest[j] = src[end - 1 - j + start];
+					dest[k][j] = src[end - 1 - j + start];
 				}
 				if(src[end] == ' ')
 				{
-					dest[j] = ' ';
+					dest[k][j] = ' ';
 				}
 				else
 				{
-				//	dest[j] = '\n';
+				//	*dest[k][j] = '\n';
 				}
 				start = end + 1;
 			}
 		}
-		puts(dest);
 		free(src);
-		free(dest);
 		k++;
 	}	
+	k = 0;
+	while(k < count)
+	{
+		puts(dest[k]);
+		k++;
+	}
+	k = 0;
+	while(k < count)
+	{
+		free(dest[k]);
+		k++;
+	}
 }
