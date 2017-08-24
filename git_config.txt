@@ -1,0 +1,9 @@
+ssh-keygen -t rsa -C "fanchuanlin@aliyun.com" 
+ssh -T git@github.com
+git config --global user.name "chuanlinfan"
+git config --global user.email "fanchuanlin@aliyun.com"
+
+git init
+git remote add origin git@github.com:chuanlinfan/acm.git  
+git clone https://github.com/chuanlinfan/acm.git
+
