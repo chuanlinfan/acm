@@ -1,0 +1,42 @@
+#define LEN 10
+#define STR_LEN 10
+
+
+---------------------------------------------[char **]------------------------------------------
+//for instore several string
+char **dest;
+
+//Init
+
+dest = (char **)malloc(LEN*sizeof(char **))
+
+//dest is a pointer the relationship as follow:
+//
+	dest
+	|
+	--> dest[0] ---dest[1] ----dest[2] ---->
+	      |          |           |
+	      |          |           |
+	      V          V           V
+            string[0] string[1]   string[2]   
+
+
+dest[0] = (char *)malloc(STR_LEN*sizeof(char *));
+
+
+//memory free
+free(dest[0])
+free(dest)
+
+
+---------------------------------------------[char *[]]------------------------------------------
+//*--dest[LEN] means list for char * which is a pointer (4 BYTE)
+char *dest[LEN];
+
+//malloc memory for this pointer list
+
+dest[0] = (char *)malloc(STR_LEN*sizeof(char *));
+
+---------------------------------------------[compare]------------------------------------------
+char **dest can reduce the space size of programe when we do not know the len of string list.
+but char *dest[] is easy to use, can reduce mistake in programing.
