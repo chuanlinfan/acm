@@ -43,10 +43,6 @@ int main()
 				{
 					dest[k][j] = ' ';
 				}
-				else
-				{
-				//	*dest[k][j] = '\n';
-				}
 				start = end + 1;
 			}
 		}
